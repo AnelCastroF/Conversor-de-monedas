@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moneda</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card bg-dark text-white">
+            <div class="card-body">
+                <h3 class="card-title text-center">Conversor de Monedas</h3>
+                <br>
+
+                <!-- Monto ingresado -->
+                <div class="display text-center">
+                    <h1 id="fromAmount">0 <span id="fromSymbol"></span></h1>
+                </div>
+
+                <!-- Seleccionar monedas -->
+                <div class="form-group">
+                    <label for="fromCurrency">De</label>
+                    <select class="form-control" id="fromCurrency">
+                        <!-- Opciones cargadas por JavaScript -->
+                    </select>
+                </div>
+
+                <div class="display text-center">
+                    <h1 id="toAmount">0 <span id="toSymbol"></span></h1>
+                </div>
+
+                <div class="form-group">
+                    <label for="toCurrency">A</label>
+                    <select class="form-control" id="toCurrency">
+                        <!-- Opciones cargadas por JavaScript -->
+                    </select>
+                </div>
+
+                <p id="conversionRate" class="text-center mt-2"></p>
+                <p class="text-center">
+                    <a href="#" id="updateRates" class="text-info">Actualizar tipos de cambio</a>
+                </p>
+
+                <!-- Botones numéricos -->
+                <div class="buttons">
+                    <div class="row">
+                        <button class="btn btn-secondary col" onclick="appendNumber('7')">7</button>
+                        <button class="btn btn-secondary col" onclick="appendNumber('8')">8</button>
+                        <button class="btn btn-secondary col" onclick="appendNumber('9')">9</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-secondary col" onclick="appendNumber('4')">4</button>
+                        <button class="btn btn-secondary col" onclick="appendNumber('5')">5</button>
+                        <button class="btn btn-secondary col" onclick="appendNumber('6')">6</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-secondary col" onclick="appendNumber('1')">1</button>
+                        <button class="btn btn-secondary col" onclick="appendNumber('2')">2</button>
+                        <button class="btn btn-secondary col" onclick="appendNumber('3')">3</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn btn-secondary col" onclick="appendNumber('0')">0</button>
+                        <button class="btn btn-secondary col" onclick="appendNumber('.')">,</button>
+                        <button class="btn btn-danger col" onclick="clearAmount()">CE</button>   
+                    </div>
+                    <div class="row">  
+                        <button class="btn btn-primary col" onclick="convertCurrency()">Convertir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
